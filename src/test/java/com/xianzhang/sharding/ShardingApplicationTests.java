@@ -15,7 +15,7 @@ class ShardingApplicationTests {
     @Test
     void contextLoads() {
         UserInfo userInfo=new UserInfo();
-        userInfo.setUid(11110L);
+        userInfo.setUid(2133L);
         userInfo.setAge(122);
         userInfo.setName("test");
         userInfoMapper.insert(userInfo);
