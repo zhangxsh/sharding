@@ -46,3 +46,13 @@ CREATE TABLE `ds1`.`user_info_priv_0` (
   `pid` BIGINT NULL,
   `pname` VARCHAR(45) NULL,
   PRIMARY KEY (`uid`));
+
+CREATE TABLE `ds0`.`config` (
+  `cid` BIGINT(32) NOT NULL,
+  `cname` VARCHAR(45) NULL,
+  PRIMARY KEY (`cid`));
+
+CREATE TABLE `ds1`.`config` (
+  `cid` BIGINT(32) NOT NULL,
+  `cname` VARCHAR(45) NULL,
+  PRIMARY KEY (`cid`));
