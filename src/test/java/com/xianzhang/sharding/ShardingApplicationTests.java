@@ -12,6 +12,7 @@ import com.xianzhang.sharding.mapper.UserInfoPrivMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
 @SpringBootTest
 class ShardingApplicationTests {
@@ -27,14 +28,14 @@ class ShardingApplicationTests {
     @Test
     void newUser2() {
         UserInfo userInfo=new UserInfo();
-        userInfo.setUid(33L);
+        userInfo.setUid(34L);
         userInfo.setAge(2);
         userInfo.setName("test");
         userInfoMapper.insert(userInfo);
         QueryWrapper<UserInfo> queryWrapper=new QueryWrapper<>();
-        queryWrapper.setEntity(userInfo);
-        Object obj=userInfoMapper.selectById("32");
-        System.out.println("a"+obj);
+        queryWrapper.eq("uid", 31L);
+        UserInfo obj=userInfoMapper.selectOne(queryWrapper);
+        Assert.notNull(obj.getName(), "null");
     }
 
     @Test
