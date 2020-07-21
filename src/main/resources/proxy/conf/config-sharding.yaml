@@ -110,20 +110,20 @@ shardingRule:
       keyGenerator:
         type: SNOWFLAKE
         column: uid
-    user_info_priv:
-      actualDataNodes: ds_${0..1}.user_info_priv_${0..1}
-      tableStrategy:
-        inline:
-          shardingColumn: pid
-          algorithmExpression: user_info_priv_${pid % 2}
-      keyGenerator:
-        type: SNOWFLAKE
-        column: pid
-  bindingTables:
-    - user_info,user_info_priv
-  defaultDatabaseStrategy:
-    inline:
-      shardingColumn: uid
-      algorithmExpression: ds_${uid % 2}
-  defaultTableStrategy:
-    none:
+#    user_info_priv:
+#      actualDataNodes: ds_${0..1}.user_info_priv_${0..1}
+#      tableStrategy:
+#        inline:
+#          shardingColumn: pid
+#          algorithmExpression: user_info_priv_${pid % 2}
+#      keyGenerator:
+#        type: SNOWFLAKE
+#        column: pid
+#  bindingTables:
+#    - user_info,user_info_priv
+#  defaultDatabaseStrategy:
+#    inline:
+#      shardingColumn: uid
+#      algorithmExpression: ds_${uid % 2}
+#  defaultTableStrategy:
+#    none:
