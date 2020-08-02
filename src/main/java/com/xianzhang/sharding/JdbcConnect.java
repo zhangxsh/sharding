@@ -12,7 +12,7 @@ import java.sql.Statement;
 public class JdbcConnect {
     public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://192.168.8.81:13308/sharding_db?characterEncoding=UTF-8","root","root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://192.168.1.3:13308/sharding_db?characterEncoding=UTF-8","root","root");
 
         Statement st=con.createStatement();
         ResultSet rs=st.executeQuery("select * from user_info where uid=1");

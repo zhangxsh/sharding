@@ -1,3 +1,5 @@
+create database ds0;
+create database ds1;
 
 CREATE TABLE `ds0`.`user_info_0` (
   `uid` BIGINT NOT NULL,
